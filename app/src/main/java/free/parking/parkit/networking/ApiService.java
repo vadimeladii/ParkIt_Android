@@ -15,4 +15,7 @@ public interface ApiService {
 
     @GET("/api/parking/add/token/{token}")
     Call<Void> postToken(@Path("token") String uuid);
+
+    @GET("/api/parking/counter/")
+    Call<Integer> getCounter();
 }

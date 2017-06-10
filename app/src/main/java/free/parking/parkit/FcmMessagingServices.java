@@ -9,6 +9,8 @@ import android.support.v4.app.NotificationCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import free.parking.parkit.activities.MainActivity;
+
 /**
  * Created by veladii on 6/8/17.
  */
