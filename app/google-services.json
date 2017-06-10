@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "1043312373911",
+    "firebase_url": "https://parkit-20585.firebaseio.com",
+    "project_id": "parkit-20585",
+    "storage_bucket": "parkit-20585.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043312373911:android:35c81461ef23a8b0",
+        "android_client_info": {
+          "package_name": "com.free.parking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043312373911-oes7v3478s025b53qiott2tsattkhevq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd6GJuDur_w9Sp026KgLhtEtCGSQkwKIA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043312373911:android:d448016f1733d730",
+        "android_client_info": {
+          "package_name": "free.parking.parkit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043312373911-oes7v3478s025b53qiott2tsattkhevq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd6GJuDur_w9Sp026KgLhtEtCGSQkwKIA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
