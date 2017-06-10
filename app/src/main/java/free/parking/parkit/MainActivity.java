@@ -2,23 +2,18 @@ package free.parking.parkit;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-
-import java.util.HashMap;
-import java.util.Map;
+import free.parking.parkit.networking.RetrofitHelper;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class MainActivity extends AppCompatActivity {
-
-    String app_server_url = "http://localhost:8080/api/parking/add/token/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,19 +25,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
                 final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
-                String url = app_server_url + token;
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+                Log.d("TOKEN", token);
+                Call<Void> call = RetrofitHelper.getINSTANCE().getApiService().postToken(token);
+                Toast.makeText(getApplicationContext(), "button cliked", Toast.LENGTH_LONG).show();
+
+                call.enqueue(new Callback<Void>() {
                     @Override
-                    public void onResponse(String s) {
-                        System.out.println(s);
+                    public void onResponse(Call<Void> call, retrofit2.Response<Void> response) {
+                        Toast.makeText(getApplicationContext(), "Token was sent", Toast.LENGTH_LONG).show();
                     }
-                }, new Response.ErrorListener() {
+
                     @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-                        System.out.println(volleyError);
+                    public void onFailure(Call<Void> call, Throwable t) {
+
                     }
                 });
-                MySingleton.getmInstance(MainActivity.this).addToRequestQueue(stringRequest);
 
             }
         });
