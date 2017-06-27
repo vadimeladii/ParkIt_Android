@@ -27,7 +27,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sendToken();
+        initWidgets();
+        mainPresenter.getCounter();
 
+
+    }
+
+    private void initWidgets() {
         imageView = (ImageView) findViewById(R.id.imageView);
         counterTextView = (TextView) findViewById(R.id.textView);
 
@@ -41,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
                 mainPresenter.getCounter();
             }
         });
+
     }
 
     private void sendToken() {

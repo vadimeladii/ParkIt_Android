@@ -5,6 +5,5 @@ package free.parking.parkit.activities;
  */
 
 public interface MainPresenter {
-
     void getCounter();
 }
